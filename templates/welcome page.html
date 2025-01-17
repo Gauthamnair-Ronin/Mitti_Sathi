@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Crop Type Prediction</title>
+    <style>
+        body {
+            font-family:  'Gowun Batang';
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #88c070, #f3f9c6);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #d4e8c7;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+
+        p {
+            font-size: 1.4em;
+            color: #e0ffe2;
+            margin-top: 100px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1) ;
+
+        }
+
+        .button {
+            color: #ffffff;
+            font-family:  'Gowun Batang';
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Specific styles for "Know Your Crop" button */
+        .crop-button {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlzgLbkDHEZGgea9vl58hHNEXOlIY_zUOVw&s);
+        }
+        .crop-button:hover {
+            background-color: #218838; /* Darker Green */
+        }
+
+        /* Specific styles for "Know Your Yield" button */
+        .yield-button {
+            background-color: #ffc107; /* Yellow */
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlzgLbkDHEZGgea9vl58hHNEXOlIY_zUOVw&s);
+            color: rgb(255, 255, 255);
+        }
+        .yield-button:hover {
+            background-color: #e0a800; /* Darker Yellow */
+        }
+
+        .welcome-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire viewport */
+            z-index: -1; /* Pushes the image behind other content */
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <img src="static\images\maintaining-sustainability (1).jpg" alt="Welcome Image" class="welcome-image" >
+    <h1>Welcome to Mitti Saathi</h1>
+    <p>Farming is a journey, and we’re here to walk it with you.
+    <br> Whether you’re starting fresh or building on years of experience,
+    <br> We’re here to help you understand your soil and choose crops that bring the best out of your land.
+    <br>Your hard work deserves the right support. Let’s grow together, one step at a time. 🌱</p>
+    <div style="display: flex; gap: 10px;">
+        <a href="/prediction" class="button crop-button">Know Your Crop</a>
+        <a href="/prediction2" class="button yield-button">Know Your Yield</a>
+    </div>
+    <footer>
+        &copy; 2025 Crop Type Prediction. All Rights Reserved.
+    </footer>
+</body>
+</html>

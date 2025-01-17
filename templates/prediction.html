@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <style>
+        .invalid {
+            color: red;
+            display: none;
+        }
+        body {
+            font-family:'Gowun Batang';
+            margin: 0;
+            padding: 0;
+            
+            opacity: 1;
+            animation: fadeIn 0.5s ease-in forwards;
+            
+            
+        }
+        @keyframes fadeIn {
+        to {
+        opacity: 1;
+        }
+    }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://cdn.pixabay.com/photo/2024/06/18/03/55/modern-farming-8836913_960_720.png");
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the image fixed during scrolling */
+            background-repeat: no-repeat; /* Avoids tiling */
+        }
+        .crop-tips {
+            font-family: 'Gowun Batang';
+            font-size: 1.2rem;
+            line-height: 1.6;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            background-color: rgba(23, 117, 48, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+            position: fixed;
+            top: 65px; /* Adjust this value to move the box down */
+            left: 550px; /* Adjust this value to move the box right */
+        }
+        .container {
+            position: absolute;
+            right: 50px; 
+            max-width: 400px;
+            padding: 20px;
+            /*background-color: rgba(255, 255, 255, 0.7);*/
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            background-color: rgba(25, 123, 51, 0.5);
+            box-shadow: 0 4px 8px rgba(0,0,0,1)
+        }
+        .container h1 {
+            font-family:  'Gowun Batang';
+            text-align : center;
+            margin-bottom: 20px;
+            color: #bce9f6;
+            text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1) ;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-family:  'Gowun Batang';
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+            color: #fffbfb;
+            text-shadow: 2px 2px 3px  rgba(0, 0, 0, 2) ;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        small {
+        font-size: 0.8em;
+        color: #ffffff; /* Light gray color */
+        display: block;
+        margin-top: 5px; /* Adds a small space between input and the limit text */
+        text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1);
+    }
+
+    </style>
+</head>
+<body>
+    <form action="/predict" method="POST">
+    <div class="overlay"></div>
+    <div class="crop-tips">
+        <h2 style="color: #5fffaf; text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1) ;">Picking the Right Crop for Your Farm</h2>
+        <p style="color: #fefffe; text-shadow: 2px 2px 3px  rgb(0, 0, 0, 1) ;">Choosing the right crop is never easy. You have to think about the climate where you are, some crops just do better in certain temperatures or seasons. And don’t forget about the soil—some of us get lucky with soil that’s perfect for certain crops, while others need a little extra work. Water is a big thing too, some crops need more than others, and if you don’t have enough, you’re in trouble.Pests can be a real pain, so it’s good to pick crops that aren’t too sensitive to them. It’s all about finding that sweet spot where everything just clicks.</p>
+    </div>
+    <div class="container">
+        <h1>Know Your Sapling</h1>
+        <p style="font-family:  'Gowun Batang'; color: #d0f4f4; text-shadow:2px 2px 3px  rgba(0, 0, 0, 1) ;">Please provide your soil composition details below:</p>
+        
+        <form id="cropForm" action="/recommend" method="POST">
+            <div class="form-group">
+                <label for="N">Nitrogen (N)</label>
+                <input type="number" step="any" id="N" name="N" min="30" max="300" required>
+                <small>Enter a value between 30 and 300 kg/Ha</small> 
+                <span id="N-error" class="invalid">Invalid input! Please enter a value between 30 and 300 kg/Ha.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="P">Phosphorus (P)</label>
+                <input type="number" step="any" id="P" name="P" min="9" max="110" required>
+                <small>Enter a value between 9 and 110 kg/Ha</small> 
+                <span id="P-error" class="invalid">Invalid input! Please enter a value between 9 and 110 kg/Ha.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="K">Potassium (K)</label>
+                <input type="number" step="any" id="K" name="K" min="50" max="370" required>
+                <small>Enter a value between 50 and 370 kg/Ha</small> 
+                <span id="K-error" class="invalid">Invalid input! Please enter a value between 50 and 370 kg/Ha.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="pH">pH</label>
+                <input type="number" step="any" id="pH" name="pH" min="4" max="8" required>
+                <small>Enter a value between 4 and 8</small> 
+                <span id="pH-error" class="invalid">Invalid input! Please enter a value between 4 and 8.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="EC">Electrical Conductivity (EC)</label>
+                <input type="number" step="any" id="EC" name="EC" min="0.01" max="3" required>
+                <small>Enter a value between 0.01 and 3 dS/m</small> 
+                <span id="EC-error" class="invalid">Invalid input! Please enter a value between 0.01 and 3 dS/m.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="S">Sulfur (S)</label>
+                <input type="number" step="any" id="S" name="S" min="0" max="0.5" required>
+                <small>Enter a value between 0 and 0.5%</small>
+                <span id="S-error" class="invalid">Invalid input! Please enter a value between 0 and 0.5%.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="Cu">Copper (Cu)</label>
+                <input type="number" step="any" id="Cu" name="Cu" min="0" max="40" required>
+                <small>Enter a value between 0 and 40 ppm</small> 
+                <span id="Cu-error" class="invalid">Invalid input! Please enter a value between 0 and 40 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="Fe">Iron (Fe)</label>
+                <input type="number" step="any" id="Fe" name="Fe" min="3.5" max="280" required>
+                <small>Enter a value between 3.5 and 280 ppm</small> 
+                <span id="Fe-error" class="invalid">Invalid input! Please enter a value between 3.5 and 280 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="Mn">Manganese (Mn)</label>
+                <input type="number" step="any" id="Mn" name="Mn" min="20" max="310" required>
+                <small>Enter a value between 20 and 310 ppm</small> 
+                <span id="Mn-error" class="invalid">Invalid input! Please enter a value between 20 and 310 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="Zn">Zinc (Zn)</label>
+                <input type="number" step="any" id="Zn" name="Zn" min="17" max="70" required>
+                <small>Enter a value between 17 and 70 ppm</small>
+                <span id="Zn-error" class="invalid">Invalid input! Please enter a value between 17 and 70 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="B">Boron (B)</label>
+                <input type="number" step="any" id="B" name="B" min="1" max="75" required>
+                <small>Enter a value between 1 and 75 ppm</small> 
+                <span id="B-error" class="invalid">Invalid input! Please enter a value between 1 and 75 ppm.</span><br><br>
+            </div>
+            
+            <button type="submit">Recommend Crop</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            // Check if Nitrogen (N) is within the valid range
+            let N = document.getElementById('N');
+            let NError = document.getElementById('N-error');
+            if (N.value < N.min || N.value > N.max) {
+                NError.style.display = "inline"; // Show error message
+                isValid = false;
+            } else {
+                NError.style.display = "none"; // Hide error message
+            }
+
+            // Check if Phosphorus (P) is within the valid range
+            let P = document.getElementById('P');
+            let PError = document.getElementById('P-error');
+            if (P.value < P.min || P.value > P.max) {
+                PError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                PError.style.display = "none"; 
+            }
+
+            // Check if Potassium (K) is within the valid range
+            let K = document.getElementById('K');
+            let KError = document.getElementById('K-error');
+            if (K.value < K.min || K.value > K.max) {
+                KError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                KError.style.display = "none"; 
+            }
+
+            // Check if pH is within the valid range
+            let pH = document.getElementById('pH');
+            let pHError = document.getElementById('pH-error');
+            if (pH.value < pH.min || pH.value > pH.max) {
+                pHError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                pHError.style.display = "none"; 
+            }
+
+            // Checking for EC
+            let EC = document.getElementById('EC');
+            let ECError = document.getElementById('EC-error');
+            if (EC.value < EC.min || EC.value > EC.max) {
+                ECError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                ECError.style.display = "none"; 
+            }
+
+            // Checking for S
+            let S = document.getElementById('S');
+            let SError = document.getElementById('S-error');
+            if (S.value < S.min || S.value > S.max) {
+                SError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                SError.style.display = "none"; 
+            }
+
+            // Checking for Cu
+            let Cu = document.getElementById('Cu');
+            let CuError = document.getElementById('Cu-error');
+            if (Cu.value < Cu.min || Cu.value > Cu.max) {
+                CuError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                CuError.style.display = "none"; 
+            }
+            
+            // Checking for Fe
+            let Fe = document.getElementById('Fe');
+            let FeError = document.getElementById('Fe-error');
+            if (Fe.value < Fe.min || Fe.value > Fe.max) {
+                FeError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                FeError.style.display = "none"; 
+            }
+
+            // Checking for Mn
+            let Mn = document.getElementById('Mn');
+            let MnError = document.getElementById('Mn-error');
+            if (Mn.value < Mn.min || Mn.value > Mn.max) {
+                MnError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                MnError.style.display = "none"; 
+            }
+
+            // Checking for Zn
+            let Zn = document.getElementById('Zn');
+            let ZnError = document.getElementById('Zn-error');
+            if (Zn.value < Zn.min || Zn.value > Zn.max) {
+                ZnError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                ZnError.style.display = "none"; 
+            }
+
+            // checking for B 
+            let B = document.getElementById('B');
+            let BError = document.getElementById('B-error');
+            if (B.value < B.min || B.value > B.max) {
+                BError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                BError.style.display = "none"; 
+            }
+
+            // Return false to prevent form submission if there are invalid inputs
+            return isValid;
+        }
+    </script>
+</body>
+</html>

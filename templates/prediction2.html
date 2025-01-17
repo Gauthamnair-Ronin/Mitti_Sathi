@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Form</title>
+    <style>
+        .invalid {
+            color: red;
+            display: none;
+        }
+        body {
+            font-family:'Gowun Batang';
+            margin: 0;
+            padding: 0;
+            
+            opacity: 1;
+            animation: fadeIn 0.5s ease-in forwards;
+            
+            
+        }
+        @keyframes fadeIn {
+        to {
+        opacity: 1;
+        }
+    }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("static/images/yield.jpg");
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the image fixed during scrolling */
+            background-repeat: no-repeat; /* Avoids tiling */
+        }
+        .crop-tips {
+            font-family: 'Gowun Batang';
+            font-size: 1.2rem;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: rgba(107, 59, 3, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin: 20px auto;
+            position: fixed;
+            top: 35px; /* Adjust this value to move the box down */
+            left: 50px; /* Adjust this value to move the box right */
+        }
+        .container {
+            position: absolute;
+            right: 50px; 
+            max-width: 400px;
+            padding: 20px;
+            
+            background-color: rgba(87, 48, 3, 0.203);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+        }
+        .container h1 {
+            font-family:  'Gowun Batang';
+            text-align : center;
+            margin-bottom: 20px;
+            color: #f88715c4;
+            text-shadow: 0px 0px 2px  rgb(7, 6, 6) ;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-family:  'Gowun Batang';
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+            color: #fffbfb;
+            text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1) ;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        small {
+        font-size: 0.9em;
+        color: #ffffff; /* Light gray color */
+        display: block;
+        margin-top: 5px; /* Adds a small space between input and the limit text */
+        text-shadow: 2px 2px 3px  rgba(0, 0, 0, 1);
+    }
+
+    </style>
+</head>
+<body>
+    <form action="/predict" method="POST">
+    <div class="overlay"></div>
+    <div class="crop-tips">
+        <h2 style="color: #f1f658; text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);">Maximizing Your Crop Yield</h2>
+        <p style="color: #fefffe; text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);">
+        Predicting the maximum yield for your crop is now easier than ever. By analyzing key factors such as soil pH, temperature, humidity, wind speed, nitrogen, phosphorus, potassium levels, soil quality, soil type, and crop type, our model provides valuable insights into your crop's potential. Understanding how these elements interact helps you make informed decisions to optimize your harvest and get the best possible yield from your efforts.
+        </p>
+
+    </div>
+    <div class="container">
+        <h1>Know Your Future</h1>
+        <p style="font-family:  'Gowun Batang'; color: #d0f4f4; text-shadow:2px 2px 3px  rgba(0, 0, 0, 1) ;">Please enter your crop and available conditions for cultivation below:</p>
+        
+        <form id="cropForm" action="/recommend" method="POST">
+            <div class="form-group">
+                <label for="sph">Soil pH Level</label>
+                <input type="number" step="any" id="sph" name="sph" min="5" max="8" required>
+                <small>Enter a value between 5 and 8 ph</small> 
+                <span id="sph-error" class="invalid">Invalid input! Please enter a value between 5 and 8 ph.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="temp">Temperature</label>
+                <input type="number" step="any" id="temp" name="temp" min="-2" max="50" required>
+                <small>Enter a value between -2 and 50°C</small> 
+                <span id="temp" class="invalid">Invalid input! Please enter a value between -2 and 50°C.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="h">Humidity</label>
+                <input type="number" step="any" id="h" name="h" min="54" max="80" required>
+                <small>Enter a value between 54% and 80%</small> 
+                <span id="h-error" class="invalid">Invalid input! Please enter a value between 54% and 80%.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="ws">Wind Speed</label>
+                <input type="number" step="any" id="ws" name="ws" min="1.9" max="19" required>
+                <small>Enter a value between 1.9 and 19 kmph</small> 
+                <span id="ws-error" class="invalid">Invalid input! Please enter a value between 1.9 and 19 kmph.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="N">Nitrogen (N)</label>
+                <input type="number" step="any" id="N" name="N" min="45" max="91" required>
+                <small>Enter a value between 45 and 91 ppm</small> 
+                <span id="N-error" class="invalid">Invalid input! Please enter a value between 45 and 91 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="P">Phosphorus (P)</label>
+                <input type="number" step="any" id="P" name="P" min="36" max="72" required>
+                <small>Enter a value between 36 and 72 ppm</small>
+                <span id="P-error" class="invalid">Invalid input! Please enter a value between 36 and 72 ppm.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="K">Potassium (K)</label>
+                <input type="number" step="any" id="K" name="K" min="0" max="40" required>
+                <small>Enter a value between 0 and 40</small> 
+                <span id="K-error" class="invalid">Invalid input! Please enter a value between 0 and 40.</span><br><br>
+            </div>
+            <div class="form-group">
+                <label for="sq">Soil Quality</label>
+                <input type="number" step="any" id="sq" name="sq" min="3.5" max="280" required>
+                <small>Enter a value between 3.5 and 280</small> 
+                <span id="sq-error" class="invalid">Invalid input! Please enter a value between 3.5 and 280.</span><br><br>
+            </div>
+
+            <div class="form-group">
+                <label for="st">Soil Type</label>
+                <select id="st" name="st" required>
+                    <option value="">-- Select Soil Type --</option>
+                    <option value="Peaty">Sandy</option>
+                    <option value="Loamy">Loamy</option>
+                    <option value="clay">Clay</option>
+                    <option value="Saline">Silty</option>
+                    <option value="Sandy">Peaty</option>
+                    
+                </select>
+                <small>Select the type of soil.</small>
+            </div>
+        
+            <div class="form-group">
+                <label for="ct">Crop Type</label>
+                <select id="ct" name="ct" required>
+                    <option value="">-- Select Crop Type --</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="rice">Rice</option>
+                    <option value="corn">Maize</option>
+                    <option value="barley">Barley</option>
+                    <option value="soybean">Soybean</option>
+                    <option value="cotton">Cotton</option>
+                    <option value="sugarcane">Sugarcane</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="potato">Potato</option>
+                    <option value="sunflower">Sunflower</option>
+                </select>
+                <small>Select the type of crop.</small>
+            
+            <button type="submit">Recommend Crop</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            // Check if Soil pH is within the valid range
+            let sph = document.getElementById('sph');
+            let sphError = document.getElementById('sph-error');
+            if (sph.value < sph.min || sph.value > sph.max) {
+                sphError.style.display = "inline"; // Show error message
+                isValid = false;
+            } else {
+                sphError.style.display = "none"; // Hide error message
+            }
+
+            // Check if Temperature is within the valid range
+            let temp = document.getElementById('temp');
+            let tempError = document.getElementById('temp-error');
+            if (temp.value < temp.min || temp.value > temp.max) {
+                tempError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                tempError.style.display = "none"; 
+            }
+
+            // Check if Potassium (K) is within the valid range
+            let K = document.getElementById('K');
+            let KError = document.getElementById('K-error');
+            if (K.value < K.min || K.value > K.max) {
+                KError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                KError.style.display = "none"; 
+            }
+
+            // Check if Humidity is within the valid range
+            let h = document.getElementById('h');
+            let hError = document.getElementById('h-error');
+            if (h.value < h.min || h.value > h.max) {
+                hError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                hError.style.display = "none"; 
+            }
+
+            // Checking for WindSpeed
+            let ws = document.getElementById('ws');
+            let wsError = document.getElementById('ws-error');
+            if (ws.value < ws.min || ws.value > ws.max) {
+                wsError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                wsError.style.display = "none"; 
+            }
+
+            // Checking for Nitrogen
+            let N = document.getElementById('N');
+            let NError = document.getElementById('N-error');
+            if (N.value < N.min || N.value > N.max) {
+                NError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                NError.style.display = "none"; 
+            }
+
+            // Checking for Phosphorus
+            let P = document.getElementById('P');
+            let PError = document.getElementById('P-error');
+            if (P.value < P.min || P.value > P.max) {
+                PError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                PError.style.display = "none"; 
+            }
+            
+            // Checking for Fe
+            let sq = document.getElementById('sq');
+            let sqError = document.getElementById('sq-error');
+            if (sq.value < sq.min || sq.value > sq.max) {
+                sqError.style.display = "inline"; 
+                isValid = false;
+            } else {
+                sqError.style.display = "none"; 
+            }
+            // Return false to prevent form submission if there are invalid inputs
+            return isValid;
+        }
+    </script>
+</body>
+</html>

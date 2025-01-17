@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Prediction</title>
+    <style>
+      /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Gowun Batang;
+            color: #fff;
+            background-color: #000; /* Fallback for the background */
+        }
+
+        /* Background container for images */
+        #background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            filter: brightness(0.5); /* Dim the background image */
+        }
+
+        /* Fruit section styling */
+        .fruit-section {
+            display: none; /* Hide all sections by default */
+            position: absolute;
+            top: 10%; /* Adjust based on your preference */
+            transform: none;
+            left: 5%;
+            width: 40%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3); /* Translucent box */
+            backdrop-filter: blur(10px); /* Blur effect */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .right-image {
+            position: fixed;
+            top: 10%;
+            right: 5%; /* Align to the right edge */
+            width: 30%; /* Adjust width as needed */
+            height: 80vh; /* Set a height to ensure it's visible */
+            background-size: cover; /* Ensure the image covers the element */
+            background-position: center; /* Center the image */
+            backdrop-filter: blur(10px); /* Blur effect */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgb(255, 255, 255);
+            z-index: 10; /* Keep the image above other content */
+        }
+
+        /* Styling for headings */
+        .fruit-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add depth to the text */
+        }
+
+        /* Paragraph styling */
+        .fruit-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #f0f0f0; /* Softer text color for readability */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8)
+        }
+
+        /* Responsiveness */
+        @media screen and (max-width: 768px) {
+            .fruit-section {
+                width: 80%;
+                left: 10%;
+            }
+
+            .fruit-section h2 {
+                font-size: 2em;
+            }
+
+            .fruit-section p {
+                font-size: 1em;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Background Image -->
+    <div id="background-container"></div>
+    <div id="right-image" class="right-image"></div>
+
+    <!-- Fruit Sections -->
+    <div id="pomegranate" class="fruit-section">
+        <h2>Pomegranate</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Pomegranate Might Be Your Ideal Crop</p>
+        <p>Pomegranates are known for their rich antioxidant content and their ability to thrive in arid climates, making them a great choice for areas with long, hot summers and mild winters. This fruit’s growing popularity in health-conscious markets means there’s a good chance you’ll find a steady demand, making it a potentially lucrative option for your farm.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Pomegranates</p>
+
+        <p>Pomegranates love well-drained, slightly alkaline soil, and they flourish in regions with temperatures ranging from 30°C to 38°C during the growing season. If you’re in a location with these conditions, you're in luck! The plant can tolerate drought once established, but it still needs enough water for consistent growth. Pomegranates are highly adaptable to different soil types, but sandy or loamy soil will give you the best results. Ensure that your field gets plenty of sunlight—pomegranates need it to produce the sweet, tangy fruit we all know and love.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Pomegranate Harvest</p>
+
+        <p>While pomegranates are relatively low-maintenance compared to other fruit crops, they do require proper pruning and care to maximize yield. Regular trimming encourages healthy growth and prevents overcrowding, which can lead to fungal diseases. Be on the lookout for pests like aphids and mealybugs, which can affect your crop. Once the fruit is ripe, it's crucial to harvest at the right time to ensure maximum flavor and quality. With the right care, pomegranates can be a rewarding addition to your farm, both in terms of yield and market appeal.</p>
+    </div>
+
+    <div id="mango" class="fruit-section">
+        <h2>Mango</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Mango Might Be Your Ideal Crop</p>
+        <p>Mangoes are a tropical delight, known for their sweet and juicy flavor. They thrive in warm, frost-free climates, making them an excellent choice for areas with long, hot summers. Mangoes are one of the most sought-after fruits globally, with high demand in both fresh markets and the processed food industry, offering great potential for profitability.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Mangoes</p>
+
+        <p>Mangoes prefer well-drained, sandy or loamy soils with a slightly acidic to neutral pH. The optimal climate for growing mangoes is warm, with temperatures ranging between 24°C and 30°C. While they can tolerate brief periods of drought, consistent rainfall or irrigation is essential for healthy growth. Mangoes also require plenty of sunlight to produce the sweet, flavorful fruit that they’re known for, so ensure your mango orchard is positioned in an area with full sun exposure.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Mango Harvest</p>
+
+        <p>To grow a successful mango crop, proper care and attention are essential. Pruning is crucial to maintain the tree’s shape, remove dead or diseased wood, and ensure good air circulation. Mango trees are prone to pests such as scale insects and mealybugs, so regular monitoring and pest control are important. Be patient when harvesting—mangoes ripen slowly and should only be picked once they have developed their full color and size. With the right care, mangoes can bring both high yields and significant profit to your farm.</p>
+
+    </div>
+
+    <div id="grapes" class="fruit-section">
+        <h2>Grapes</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Grapes Might Be Your Ideal Crop</p>
+        <p>Grapes are a versatile and profitable crop, widely known for their use in both fresh consumption and winemaking. They thrive in temperate climates, and their growing popularity makes them an excellent choice for markets that demand fresh fruit or high-quality wine. With proper care, grapes can yield significant returns, making them an attractive option for farmers seeking both short-term income and long-term investment opportunities.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Grapes</p>
+
+        <p>Grapes prefer well-drained, slightly acidic to neutral soil, and they grow best in regions with hot, dry summers and mild winters. The ideal temperature range for grapevines is between 15°C and 30°C during the growing season. Grapevines are sensitive to frost, so it’s important to plant them in areas that are protected from cold temperatures. Regular sunlight is crucial for the development of high-quality grapes, as it helps produce the sugars needed for a flavorful fruit or premium wine.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Grape Harvest</p>
+
+        <p>Growing grapes requires proper vine management, including regular pruning to encourage healthy growth and increase yields. Grapevines can be susceptible to fungal diseases and pests such as aphids, so it's important to monitor them regularly and apply pest control methods as needed. The timing of harvest is critical—grapes should be picked when they reach full ripeness, as this will determine their sweetness and overall quality. With the right care, grapes can provide a fruitful harvest, whether for fresh consumption or wine production.</p>
+    </div>
+    <div id="mulberry" class="fruit-section">
+        <h2>Mulberry</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Mulberry Might Be Your Ideal Crop</p>
+        <p>Mulberries are a fast-growing fruit, valued for their sweet and tart flavor. They thrive in temperate and subtropical climates, making them a great choice for areas with moderate rainfall and well-drained soils. Mulberries are versatile—used fresh, dried, or processed into jams and juices—and are increasingly popular in health-conscious markets due to their rich nutrient content, including antioxidants and vitamins.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Mulberries</p>
+
+        <p>Mulberry trees prefer well-drained soils with a slightly acidic to neutral pH. They grow best in areas with temperatures ranging from 15°C to 30°C. While they are relatively drought-tolerant, consistent moisture is necessary for healthy growth. Mulberries also need plenty of sunlight to produce high-quality fruit. If you live in an area with cold winters, ensure the trees are protected from frost, as it can damage the fruit and the branches.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Mulberry Harvest</p>
+
+        <p>Mulberries are low-maintenance, but they benefit from regular pruning to promote healthy growth and prevent overcrowding. The trees can attract pests like aphids and scale insects, so it’s important to monitor for these issues. Mulberries ripen quickly, so harvest them when they are fully colored and easy to pick. With proper care, mulberries can be a rewarding and profitable crop with multiple uses in the market.</p>
+    </div>
+
+    <div id="ragi" class="fruit-section">
+        <h2>Ragi</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Ragi Might Be Your Ideal Crop</p>
+        <p>Ragi, also known as finger millet, is a highly nutritious grain that is a staple in many parts of Africa and Asia. Known for its high calcium and fiber content, ragi is gaining popularity as a health food. It is well-suited for areas with low rainfall and poor soil, making it a reliable crop for regions that are not ideal for growing other cereals. Ragi also has a short growing season, making it an excellent option for farmers looking to maximize their yields.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Ragi</p>
+
+        <p>Ragi grows best in well-drained, slightly alkaline soil, and it is highly tolerant of drought conditions. It thrives in regions with temperatures ranging from 25°C to 35°C and requires very little water compared to other grains. Ragi is also quite resilient to pests and diseases, making it an easy crop to manage. It can be grown at high altitudes as well, making it adaptable to a variety of environments.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Ragi Harvest</p>
+
+        <p>Ragi requires minimal care and is easy to grow, but it benefits from proper soil preparation to maximize yield. Regular weeding is important, as the plants can struggle with competition from weeds. Ragi’s short growing cycle means that it should be harvested as soon as the grains mature and turn a golden brown color. With its resilience and high nutritional value, ragi can be a reliable and profitable crop for farmers.</p>
+
+    </div>
+    <div id="potato" class="fruit-section">
+        <h2>Potato</h2>
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Why Potato Might Be Your Ideal Crop</p>
+        <p>Potatoes are one of the most versatile and widely consumed crops globally. Whether boiled, baked, mashed, or fried, they are a staple in many cuisines. Potatoes are in constant demand, making them a profitable crop for farmers. Additionally, they can be grown in a variety of climates, offering flexibility for different regions. With the right care, potatoes can yield high productivity, making them an attractive option for small and large-scale farming alike.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Soil and Climate Considerations for Potatoes</p>
+
+        <p>Potatoes prefer well-drained, loose, and slightly acidic soil with a pH of 5.5 to 6.5. They thrive in cooler climates, with temperatures ranging between 15°C and 20°C, and are sensitive to frost. While potatoes can tolerate some drought, they require consistent moisture to grow properly. Ensure that the soil is well-fertilized, as potatoes are nutrient-hungry crops that benefit from high-quality organic matter and balanced fertilization.</p>
+
+        <p style="font-size: 1.5em; text-decoration-line: underline;">Tips for a Successful Potato Harvest</p>
+
+        <p>Potatoes require regular care and attention. They need to be hilled, or mounded, as they grow to ensure proper tuber formation and prevent exposure to sunlight, which can cause green spots. Regular pest control is essential, as potatoes are susceptible to pests like aphids, Colorado potato beetles, and fungal diseases. Timing is key for harvesting—potatoes should be harvested once the plants begin to die back and the skins are firm. With proper care, potatoes can be a highly rewarding crop to grow and sell.</p>
+    </div>
+    <script>
+        // Prediction value from Flask backend
+        const prediction = "{{ prediction }}"; // Flask injects the prediction here
+
+        // Function to show the relevant fruit section
+        function showFruitSection(prediction) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.fruit-section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Set the background image and display the corresponding section
+            const selectedSection = document.getElementById(prediction);
+            if (selectedSection) {
+                selectedSection.style.display = 'block'; // Show the matching section
+
+                // Set the left background image dynamically
+                const backgroundContainer = document.getElementById('background-container');
+                backgroundContainer.style.backgroundImage = `url('static/images/${prediction}-bg.png')`;
+
+                // Set the right fixed image dynamically
+                const rightImage = document.getElementById('right-image');
+                rightImage.style.backgroundImage = `url('static/images/${prediction}-right.png')`;
+                console.log('Background image set:', `url('static/images/${prediction}-right.png')`);
+            } 
+            else {
+                console.error("No section found for the prediction:", prediction);
+            }
+        }
+
+        // Call the function with the prediction value
+        showFruitSection(prediction);
+    </script>
+</body>
+</html>
+
+
