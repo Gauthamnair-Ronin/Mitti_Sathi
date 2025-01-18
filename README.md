@@ -48,11 +48,11 @@ The application is deployed and available at [Mitti Sathi](https://mitti-sathi.o
 ## Dataset Acknowledgment
 
 - **Crop Recommender Dataset with Soil Nutrients**: The dataset used for crop prediction.
-  - Authors: [V Manikantasanjay]
+  - Authors: [V Manikantasanjay](https://www.kaggle.com/manikantasanjayv)
   - Available at: [Classification Data](https://www.kaggle.com/datasets/manikantasanjayv/crop-recommender-dataset-with-soil-nutrients)
 
 - **Crop Yield and Environmental Factors**: The dataset used for predicting crop yield based on environmental conditions.
-  - Authors: [Madhan Kumar]
+  - Authors: [Madhan Kumar](https://www.kaggle.com/madhankumar789)
   - Available at: [Regression Data](https://www.kaggle.com/datasets/madhankumar789/crop-yield-and-environmental-factors-2014-2023)
 
 ## License
