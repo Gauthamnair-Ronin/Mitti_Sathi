@@ -44,3 +44,18 @@ The application is deployed and available at [Mitti Sathi](https://mitti-sathi.o
 ## Acknowledgments
 - This project was developed through collaborative efforts between [Gautham Nair](https://github.com/Gauthamnair-Rnonin) and [Afidh S Muhammed](https://github.com/).
 - Thanks to the tools and libraries used in this project: Flask, Waitress, scikit-learn, pandas, numpy, and matplotlib.
+
+## Dataset Acknowledgment
+
+- **Crop Recommender Dataset with Soil Nutrients**: The dataset used for crop prediction.
+  - Authors: [V Manikantasanjay]
+  - Available at: [Classification Data](https://www.kaggle.com/datasets/manikantasanjayv/crop-recommender-dataset-with-soil-nutrients)
+
+- **Crop Yield and Environmental Factors**: The dataset used for predicting crop yield based on environmental conditions.
+  - Authors: [Madhan Kumar]
+  - Available at: [Regression Data](https://www.kaggle.com/datasets/madhankumar789/crop-yield-and-environmental-factors-2014-2023)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Gauthamnair-Ronin/Mitti_Sathi/blob/master/LICENSE) file for details.
+
