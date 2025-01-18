@@ -3,7 +3,7 @@ import joblib
 from os import path
 import pandas as pd
 import numpy as np
-
+import math
 
 filename = "random_forest_pipeline2.pkl"
 rf_model = joblib.load(path.join("model", filename))
@@ -129,7 +129,7 @@ def predict2():
     # Now, apply the pipeline to make predictions
     predi2 = crop_yield.predict(df)
     
-    return render_template("result2.html",prediction2=predi2[0])    
+    return render_template("result2.html",prediction2=math.ceil(predi2[0]))    
 
 if __name__=="__main__":
     app.run(debug=True)
