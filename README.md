@@ -20,7 +20,7 @@ This project aims to predict the most suitable crops for cultivation based on va
 
 ## About the Models
 
-- **Classification Model**: This model predicts the crop type based on various soil and environmental features.
+- **Classification Model**: This model predicts the crop type based on soil composition.
 - **Regression Model**: This model predicts the crop yield based on environmental conditions such as temperature, soil pH, and more.
 
 ## Technologies Used
