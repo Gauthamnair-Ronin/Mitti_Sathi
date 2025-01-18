@@ -7,14 +7,14 @@ This project aims to predict the most suitable crops for cultivation based on va
 
 ## Contributors
 
-### [Your Name](https://github.com/Gauthamnair-Ronin)
+### [Gautham Nair](https://github.com/Gauthamnair-Ronin)
 - Co-conceived the project idea and assisted with dataset hunting and exploratory data analysis (EDA).
 - Contributed to feature engineering and preprocessing for the classification dataset.
 - Developed the machine learning classifier model and integrated it into the Flask web application.
 - Designed and implemented the web application using Flask, HTML, and CSS.
 - Managed the deployment process using Waitress for local hosting and Render for production deployment.
 
-### [Colleague's Name](https://github.com/)
+### [Afidh S Muhammed](https://github.com/)
 - Co-conceived the project idea and assisted with dataset hunting and exploratory data analysis (EDA).
 - Contributed to feature engineering and preprocessing for the regression dataset.
 - Developed the regressor model for predicting crop yield based on environmental factors.
