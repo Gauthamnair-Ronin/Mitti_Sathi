@@ -32,10 +32,9 @@ This project aims to predict the most suitable crops for cultivation based on va
 - GitHub, Render for deployment
 
 ## How to Run the Application
-1. Clone the repository: `git clone https://github.com/yourusername/repository-name.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the Flask app locally: `python app.py`
-4. The application should be accessible at `http://127.0.0.1:5000/`.
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run the Flask app locally: `python main.py`
+3. The application should be accessible at `http://127.0.0.1:5000/`.
 
 ## Deployment
 The application is deployed and available at [Mitti Sathi](https://mitti-sathi.onrender.com). You can access the web application through this URL.
