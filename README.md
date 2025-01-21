@@ -12,7 +12,7 @@ This project aims to predict the most suitable crops for cultivation based on va
 - Designed and implemented the web application using Flask, HTML, and CSS.
 - Managed the deployment process using Waitress for local hosting and Render for production deployment.
 
-### [Afidh S Muhammed](https://github.com/)
+### [Afidh S Muhammed](https://github.com/Afii650)
 - Co-conceived the project idea and assisted with dataset hunting and exploratory data analysis (EDA).
 - Contributed to feature engineering and preprocessing for the regression dataset.
 - Developed the regressor model for predicting crop yield based on environmental factors.
@@ -42,7 +42,7 @@ The application is deployed and available at [Mitti Sathi](https://mitti-sathi.o
 
 
 ## Acknowledgments
-- This project was developed through collaborative efforts between [Gautham Nair](https://github.com/Gauthamnair-Rnonin) and [Afidh S Muhammed](https://github.com/).
+- This project was developed through collaborative efforts between [Gautham Nair](https://github.com/Gauthamnair-Rnonin) and [Afidh S Muhammed](https://github.com/Afii650).
 - Thanks to the tools and libraries used in this project: Flask, Waitress, scikit-learn, pandas, numpy, and matplotlib.
 
 ## Dataset Acknowledgment
