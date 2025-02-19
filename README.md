@@ -2,6 +2,7 @@
 # Crop Yield Prediction Web Application
 
 This project aims to predict the most suitable crops for cultivation based on various factors like soil nutrients, pH, temperature, and other environmental variables. The application uses machine learning models to help farmers make informed decisions.
+![Webpage gif](https://github.com/Gauthamnair-Ronin/Mitti_Sathi/blob/e6c37867d9a0985784d6b221be64017547f2cd99/static/images/mitti_sathi3.gif)
 
 ## Contributors
 
